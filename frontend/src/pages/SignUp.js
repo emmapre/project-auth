@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Button } from 'lib/Button'
 
 export const SignUp = () => {
@@ -55,6 +56,14 @@ export const SignUp = () => {
         borderProperties="solid 1px black"
         width="120px"
       />
+      <Link to='/'>
+        <Button
+          buttonText="Go back"
+          backgroundColor="palegreen"
+          borderProperties="solid 1px black"
+          width="120px"
+        />
+      </Link>
       {/* <h3>{message}</h3> */}
     </form>
 

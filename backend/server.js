@@ -21,7 +21,8 @@ const User = mongoose.model('User', {
   },
   password: {
     type: String,
-    required: true
+    required: true,
+    minlength: 4
   },
   accessToken: {
     type: String,
@@ -60,7 +61,7 @@ app.post('/users', async (req, res) => {
     const { name, email, password } = req.body
     const user = new User({ name, email, password: bcrypt.hashSync(password) })
     user.save()
-    res.status(201).json({ userId: user._id, accessToken: user.accessToken })
+    res.status(201).json({ message: 'User created.', userId: user._id, accessToken: user.accessToken })
   } catch (err) {
     res.status(400).json({ message: 'Could not create user.', errors: err.errors })
   }
@@ -74,7 +75,7 @@ app.get('/secrets', (req, res) => {
 app.post('/sessions', async (req, res) => {
   const user = await User.findOne({ email: req.body.email })
   if (user && bcrypt.compareSync(req.body.password, user.password)) {
-    res.status(201).json({ userId: user._id, accessToken: user.accessToken })
+    res.json({ userId: user._id, accessToken: user.accessToken })
   } else {
     res.status(400).json({ notFound: true })
   }

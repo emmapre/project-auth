@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components/macro";
 
 export const Button = ({
+  onClick,
   icon,
   buttonText,
   backgroundColor,
@@ -10,15 +11,18 @@ export const Button = ({
   width
 }) => {
   return (
-    <StyledButton
+
+    < StyledButton
+      onClick={onClick}
       background={backgroundColor}
       border={borderProperties}
       width={width}
       color={textColor}
     >
-      {icon && <Icon>{icon}</Icon>}
+      {icon && <Icon>{icon}</Icon>
+      }
       {buttonText}
-    </StyledButton>
+    </StyledButton >
   );
 };
 
@@ -39,6 +43,6 @@ const StyledButton = styled.button`
 `;
 
 const Icon = styled.span`
-  padding-right: 8px;
+   padding-right: 8px;
   padding-left: -4px;
 `;
