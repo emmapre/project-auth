@@ -62,7 +62,7 @@ const Credit = styled.a`
 `
 
 export const SignUp = () => {
-  const url = 'https://fridamaria-secret.herokuapp.com/users'
+  const url = 'https://find-emmas-secrets.herokuapp.com/users'
   const [signUpValues, setSignUpValues] = useState({
     name: '',
     email: '',
