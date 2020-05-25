@@ -89,7 +89,7 @@ export const SecretPage = () => {
               onClick={handleSignOut}
               buttonText='Sign out'
               backgroundColor='#F8EAD7'
-              borderPropertis='solid 2px #5D5D5D'
+              borderProperties='solid 2px #5D5D5D'
               width='120px'
               color='#5D5D5D'
               fontFamily='"Varela Round", sans-serif'
