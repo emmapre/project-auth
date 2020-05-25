@@ -50,7 +50,7 @@ const Credit = styled.a`
 `
 
 export const SecretPage = () => {
-  const url = 'https://fridamaria-secret.herokuapp.com/secrets'
+  const url = 'https://find-emmas-secrets.herokuapp.com/secrets'
   const [message, setMessage] = useState('')
   const [error, setError] = useState('')
   const history = useHistory()
