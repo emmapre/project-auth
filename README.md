@@ -24,5 +24,5 @@ If we had more time we would allowed the user to post information to the databas
 - Styled Components
 
 ## View it live
-Backend: https://fridamaria-secret.herokuapp.com/
-Frontend: https://fridamaria-secret.netlify.app/
+- Backend: https://fridamaria-secret.herokuapp.com/
+- Frontend: https://fridamaria-secret.netlify.app/
