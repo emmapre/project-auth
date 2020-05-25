@@ -5,12 +5,11 @@ import { Button } from 'lib/Button'
 export const SignIn = () => {
   const url = 'http://localhost:8080/sessions'
   const history = useHistory()
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [signInValues, setSignInValues] = useState({
+    email: '',
+    password: ''
+  })
   const [error, setError] = useState('')
-
-  // const [message, setMessage] = useState('')
-
 
   const handleSubmit = event => {
     event.preventDefault()
@@ -21,15 +20,13 @@ export const SignIn = () => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          email, password
-        })
+        body: JSON.stringify(signInValues)
       }
     )
 
       .then(res => {
         if (!res.ok) {
-          throw new Error("Unable to sign-in")
+          throw new Error("Unable to sign in.")
         }
         res.json().then(data => {
           if (data.notFound !== true) {
@@ -38,19 +35,14 @@ export const SignIn = () => {
           }
         })
       })
-
-      // .then(({ accessToken }) => {
-      //   if (accessToken) {
-      //     window.localStorage.setItem('accessToken', accessToken)
-      //     history.push('/secretpage')
-      //   }
-      // })
       .catch((err) => {
         setError(err.message)
       })
       .then(() => {
-        setEmail('')
-        setPassword('')
+        setSignInValues({
+          email: '',
+          password: ''
+        })
       })
   }
 
@@ -58,11 +50,11 @@ export const SignIn = () => {
     <form onSubmit={handleSubmit}>
       <label>
         E-mail
-        <input type='email' required value={email} onChange={event => setEmail(event.target.value)} />
+        <input type='email' required value={signInValues.email} onChange={event => setSignInValues({ ...signInValues, email: event.target.value })} />
       </label>
       <label>
         Password
-        <input type='password' required minLength='4' value={password} onChange={event => setPassword(event.target.value)} />
+        <input type='password' required minLength='4' value={signInValues.password} onChange={event => setSignInValues({ ...signInValues, password: event.target.value })} />
       </label>
       <Button
         type="submit"
@@ -81,9 +73,5 @@ export const SignIn = () => {
       </Link>
       {error && <p>{error}</p>}
     </form>
-
   )
-
-
-
 }
