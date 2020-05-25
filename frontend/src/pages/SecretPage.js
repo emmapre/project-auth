@@ -43,9 +43,11 @@ export const SecretPage = () => {
           <Button
             onClick={handleSignOut}
             buttonText="Sign out"
-            backgroundColor="palegreen"
-            borderProperties="solid 1px black"
+            backgroundColor="#F8EAD7"
+            borderProperties="solid 2px #5D5D5D"
             width="120px"
+            color="#5D5D5D"
+            fontFamily="'Varela Round', sans-serif"
           />
         </>
       }
