@@ -6,23 +6,38 @@ import styled from 'styled-components/macro'
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 768px) {
+    flex-direction: row; 
+  }
 `
 const Image = styled.div`
-  width: 50vw;
-  height: 100vh;
+  width: 100vw;
+  height: 50vh;
   background-image: url(${padlocks});
   background-size: cover; 
   background-position: center center; 
+
+  @media (min-width: 768px) {
+    width: 50vw;
+    height: 100vh;
+  }
 `
 const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 50vw;
-  height: 100vh;
+  width: 100vw;
+  height: 50vh;
+
+  @media (min-width: 768px) {
+    width: 50vw;
+    height: 100vh;
+  }
 `
 const Title = styled.h1`
   color: #5D5D5D;
@@ -106,29 +121,29 @@ export const SignUp = () => {
           </Label>
           <div>
             <Button
-              type="submit"
-              buttonText="Sign Up"
-              backgroundColor="#00D3C2"
-              borderProperties="solid 2px #5D5D5D"
-              width="120px"
-              color="#5D5D5D"
-              fontFamily="'Varela Round', sans-serif"
+              type='submit'
+              buttonText='Sign Up'
+              backgroundColor='#00D3C2'
+              borderProperties='solid 2px #5D5D5D'
+              width='120px'
+              color='#5D5D5D'
+              fontFamily='"Varela Round", sans-serif'
             />
             <Link to='/'>
               <Button
-                buttonText="Go back"
-                backgroundColor="#F8EAD7"
-                borderProperties="solid 2px #5D5D5D"
-                width="120px"
-                color="#5D5D5D"
-                fontFamily="'Varela Round', sans-serif"
+                buttonText='Go back'
+                backgroundColor='#F8EAD7'
+                borderProperties='solid 2px #5D5D5D'
+                width='120px'
+                color='#5D5D5D'
+                fontFamily='"Varela Round", sans-serif'
               />
             </Link>
           </div>
           {success && <Message>{success}</Message>}
           {error && <Message>{error}</Message>}
         </Form>
-        <Credit href="https://www.freepik.com/free-photos-vectors/business">Image by rawpixel at freepick</Credit>
+        <Credit href='https://www.freepik.com/free-photos-vectors/business'>Image by rawpixel at freepick</Credit>
       </Content>
     </Container>
   )

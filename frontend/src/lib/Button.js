@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components/macro";
+import React from 'react'
+import styled from 'styled-components/macro'
 
 export const Button = ({
   onClick,
@@ -12,7 +12,6 @@ export const Button = ({
   fontFamily
 }) => {
   return (
-
     < StyledButton
       onClick={onClick}
       background={backgroundColor}
@@ -25,8 +24,8 @@ export const Button = ({
       }
       {buttonText}
     </StyledButton >
-  );
-};
+  )
+}
 
 const StyledButton = styled.button`
   min-width: 64px;
@@ -41,9 +40,9 @@ const StyledButton = styled.button`
   }
   margin: 20px;
   font-family: ${props => props.fontFamily};
-`;
+`
 
 const Icon = styled.span`
    padding-right: 8px;
   padding-left: -4px;
-`;
+`
