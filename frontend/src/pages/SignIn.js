@@ -62,7 +62,7 @@ const Credit = styled.a`
 `
 
 export const SignIn = () => {
-  const url = 'https://fridamaria-secret.herokuapp.com/sessions'
+  const url = 'https://find-emmas-secrets.herokuapp.com/sessions'
   const history = useHistory()
   const [signInValues, setSignInValues] = useState({
     email: '',
