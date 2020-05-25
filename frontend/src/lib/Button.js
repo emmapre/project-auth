@@ -8,7 +8,8 @@ export const Button = ({
   backgroundColor,
   textColor,
   borderProperties,
-  width
+  width,
+  fontFamily
 }) => {
   return (
 
@@ -18,6 +19,7 @@ export const Button = ({
       border={borderProperties}
       width={width}
       color={textColor}
+      fontFamily={fontFamily}
     >
       {icon && <Icon>{icon}</Icon>
       }
@@ -34,12 +36,11 @@ const StyledButton = styled.button`
   border-radius: 3px;
   background-color: ${props => props.background};
   border: ${props => props.border};
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
   color: {
     ${props => props.color} : 'white'
   }
   margin: 20px;
+  font-family: ${props => props.fontFamily};
 `;
 
 const Icon = styled.span`
