@@ -24,5 +24,5 @@ If we had more time we would allowed the user to post information to the databas
 - Styled Components
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Backend: https://fridamaria-secret.herokuapp.com/
+Frontend: https://fridamaria-secret.netlify.app/
